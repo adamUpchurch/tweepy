@@ -98,6 +98,3 @@ def reply_to_tweet(id, status, credentials):
     api = twitterAPI(credentials)
     api.update_status(status=status, in_reply_to_status_id=id)
     return 'Retweeted a tweet'
-
-if __name__ == "__main__":
-    followPeople('YCombinator')
