@@ -3,7 +3,6 @@ import os
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 
-
 client = pymongo.MongoClient("mongodb+srv://tucker:YncJodxXnIDDNvBP@startupathon-dd6pk.mongodb.net/leo?retryWrites=true")
 db = client.leo
 
@@ -22,6 +21,6 @@ def add_subscriber(name, email):
         print(response.status_code)
         print(response.body)
         print(response.headers)
-    except Exception as e:
-        print(e.message)
+    except
+        print('error')
         return 'User added'
