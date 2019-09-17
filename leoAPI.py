@@ -21,6 +21,6 @@ def add_subscriber(name, email):
         print(response.status_code)
         print(response.body)
         print(response.headers)
-    except
+    except:
         print('error')
         return 'User added'
