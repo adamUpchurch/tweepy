@@ -2,7 +2,11 @@
 from flask import Flask, request, render_template, jsonify
 import json
 from twitterAPI  import followPeople, create_friendship, create_favorite, retweet, get_tweets, reply_to_tweet
+from leoAPI  import add_subscriber
+from flask_cors import CORS
+
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/', methods=['GET'])
 def index():
@@ -37,6 +41,12 @@ def reply_tweet():
 def follow_randos():
     data = json.loads(request.data)
     return jsonify(followPeople(thatSaid=data['thatSaid'], credentials= data['twitterCredentials'], atMost=data['atMost'], polarityMin=data['polarityMin']))
+
+@app.route('/read_leo_add_subscriber', methods=['POST'])
+def leo_subscriber():
+    data = json.loads(request.data)
+    add_subscriber(name=data['name'], email= data['email'])
+    return jsonify({"add_user": {"name":"name", "email":"emails"}})
 
 
 if __name__ == "__main__":
