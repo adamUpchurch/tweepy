@@ -32,7 +32,7 @@ def re_tweet():
     data = json.loads(request.data)
     return retweet(data['tweet_id'], data['twitterCredentials'])
 
-@app.route('/reply_to_tweet', methods=['POST'])
+@app.route('/reply_to_tweet', methods=['POST', 'OPTION'])
 def reply_tweet():
     data = json.loads(request.data)
     return reply_to_tweet(data['tweet_id'], data['status'], data['twitterCredentials'])
