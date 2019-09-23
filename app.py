@@ -45,14 +45,15 @@ def follow_randos():
 @app.route('/read_leo_add_subscriber', methods=['POST'])
 def leo_subscriber():
     print('----- data request -------')
-    print(request.data)
-    data = request.get_json()
+    print(request)
+    data = request.get_json(force=True)
+    print('----- ahhhhh -------')
     print(data)
-    email = data["email"]
-    name = data["name"]
+    email = data.get("email")
+    name = data.get("name")
     print(email, name)
     add_subscriber(name=name, email=email)
-    return jsonify({"user_added": {"name":name, "email":email}})
+    return {"user_added": {"name":name, "email":email}}
 
 
 if __name__ == "__main__":
