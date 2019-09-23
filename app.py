@@ -44,6 +44,7 @@ def follow_randos():
 
 @app.route('/read_leo_add_subscriber', methods=['POST'])
 def leo_subscriber():
+    print(request.data)
     data = json.loads(request.data)
     email = data['email']
     name = data['name']
