@@ -1,7 +1,7 @@
 import pymongo
 import os
 from sendgrid import SendGridAPIClient
-from sendgrid.helpers.mail import Mail
+from sendgrid.helpers.mail import Mail, Email, Personalization
 
 client = pymongo.MongoClient("mongodb+srv://tucker:YncJodxXnIDDNvBP@startupathon-dd6pk.mongodb.net/leo?retryWrites=true")
 db = client.leo
