@@ -30,6 +30,7 @@ def add_subscriber(name, email):
         print(response.status_code)
         print(response.body)
         print(response.headers)
+        return 'User added'
     except:
         print('error')
-        return 'User added'
+        return 'User not added'
