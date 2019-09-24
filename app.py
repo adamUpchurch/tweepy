@@ -42,7 +42,7 @@ def follow_randos():
     data = json.loads(request.data)
     return jsonify(followPeople(thatSaid=data['thatSaid'], credentials= data['twitterCredentials'], atMost=data['atMost'], polarityMin=data['polarityMin']))
 
-@app.route('/read_leo_add_subscriber', methods=['POST', 'OPTIONS'])
+@app.route('/read_leo_add_subscriber', methods=['POST'])
 def leo_subscriber():
     print('----- data request -------')
     print(request)
