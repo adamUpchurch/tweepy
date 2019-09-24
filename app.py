@@ -32,7 +32,7 @@ def re_tweet():
     data = json.loads(request.data)
     return retweet(data['tweet_id'], data['twitterCredentials'])
 
-@app.route('/reply_to_tweet', methods=['POST', 'OPTION'])
+@app.route('/reply_to_tweet', methods=['POST'])
 def reply_tweet():
     data = json.loads(request.data)
     return reply_to_tweet(data['tweet_id'], data['status'], data['twitterCredentials'])
@@ -42,7 +42,7 @@ def follow_randos():
     data = json.loads(request.data)
     return jsonify(followPeople(thatSaid=data['thatSaid'], credentials= data['twitterCredentials'], atMost=data['atMost'], polarityMin=data['polarityMin']))
 
-@app.route('/read_leo_add_subscriber', methods=['POST'])
+@app.route('/read_leo_add_subscriber', methods=['POST', 'OPTIONS'])
 def leo_subscriber():
     print('----- data request -------')
     print(request)
@@ -53,7 +53,7 @@ def leo_subscriber():
     name = data.get("name")
     print(email, name)
     add_subscriber(name=name, email=email)
-    return {"user_added": {"name":name, "email":email}}
+    return "user added"
 
 
 if __name__ == "__main__":
