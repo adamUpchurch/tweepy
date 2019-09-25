@@ -55,5 +55,4 @@ def leo_subscriber():
     return add_subscriber(name=name, email=email)
 
 
-if __name__ == "__main__":
-    app.run(host='0.0.0.0')
+app.run(host='0.0.0.0')
