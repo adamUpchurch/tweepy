@@ -1,1 +1,1 @@
-web: gunicorn app:app --preload --forwarded-allow-ips *
+web: gunicorn app:app --forwarded-allow-ips *
