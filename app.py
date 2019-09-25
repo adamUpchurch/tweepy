@@ -6,7 +6,7 @@ from leoAPI  import add_subscriber
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app, resources={r"/*":{"origins": "*"}})
+CORS(app)
 
 @app.route('/', methods=['GET'])
 def index():
@@ -52,9 +52,8 @@ def leo_subscriber():
     email = data.get("email")
     name = data.get("name")
     print(email, name)
-    add_subscriber(name=name, email=email)
-    return "user added"
+    return add_subscriber(name=name, email=email)
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0')
