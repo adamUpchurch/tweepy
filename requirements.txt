@@ -4,7 +4,7 @@ textblob==0.15.3
 tweepy==3.8.0
 gunicorn==19.9.0
 sendgrid==6.1.0
-Flask-Cors==3.0.8
+Flask-Cors==3.0.9
 Flask-PyMongo==2.3.0
 pymongo==3.9.0
 dnspython==1.16.0
